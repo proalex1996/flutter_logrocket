@@ -16,8 +16,8 @@ class MethodChannelFlutterLogrocket extends FlutterLogrocketPlatform {
   }
 
   @override
-  void sendGetRequest(String url) {
-    methodChannel
-        .invokeMethod<String>('sendGetRequest', <String, dynamic>{"URL": url});
+  void identifyUser(String userId) {
+    methodChannel.invokeMethod<String>(
+        'identifyUser', <String, dynamic>{"userId": userId});
   }
 }

@@ -1,12 +1,12 @@
+import 'dart:async';
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'dart:async';
-
 import 'package:flutter/services.dart';
 import 'package:flutter_logrocket/flutter_logrocket.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -28,7 +28,8 @@ class _MyAppState extends State<MyApp> {
 
   Future<void> initPlatformState() async {
     try {
-      _flutterLogrocketPlugin.initLogrocket(appId: "kwv1j5/test");
+      _flutterLogrocketPlugin.initLogrocket(appId: "gpghi6/tik_project");
+      _flutterLogrocketPlugin.identifyUser(userId: "a2312dsfddds34234");
     } on PlatformException {
       log("cannot init app");
     }
@@ -64,10 +65,7 @@ class _MyAppState extends State<MyApp> {
                     },
                   ),
                 ),
-                onPressed: () {
-                  _flutterLogrocketPlugin.sendGetRequest(
-                      url: "https://flutter.dev/");
-                },
+                onPressed: () {},
                 child: const Text('TextButton'))
           ],
         ),

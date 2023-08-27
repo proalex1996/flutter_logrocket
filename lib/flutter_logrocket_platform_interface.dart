@@ -27,7 +27,7 @@ abstract class FlutterLogrocketPlatform extends PlatformInterface {
     throw UnimplementedError('Logrocket has not been implemented.');
   }
 
-  void sendGetRequest(String url) {
-    throw UnimplementedError('sendGetRequest has not been implemented.');
+  void identifyUser(String userId) {
+    throw UnimplementedError('identifyUser has not been implemented.');
   }
 }

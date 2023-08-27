@@ -5,7 +5,7 @@ class FlutterLogrocket {
     FlutterLogrocketPlatform.instance.initLogrocket(appId);
   }
 
-  void sendGetRequest({required String url}) async {
-    FlutterLogrocketPlatform.instance.sendGetRequest(url);
+  void identifyUser({required String userId}) async {
+    FlutterLogrocketPlatform.instance.identifyUser(userId);
   }
 }

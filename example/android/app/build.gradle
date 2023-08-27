@@ -24,7 +24,7 @@ if (flutterVersionName == null) {
 
 android {
     namespace "com.tik.flutter_logrocket_example"
-    compileSdkVersion flutter.compileSdkVersion
+    compileSdkVersion 33
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -37,8 +37,8 @@ android {
         applicationId "com.tik.flutter_logrocket_example"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-        minSdkVersion flutter.minSdkVersion
-        targetSdkVersion flutter.targetSdkVersion
+        minSdkVersion 21
+        targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
@@ -55,3 +55,7 @@ android {
 flutter {
     source '../..'
 }
+
+ dependencies {
+        implementation 'com.logrocket:logrocket:1.19.2'
+    }

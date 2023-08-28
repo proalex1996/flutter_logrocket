@@ -12,8 +12,8 @@ class MockFlutterLogrocketPlatform
   }
 
   @override
-  void sendGetRequest(String url) {
-    // TODO: implement sendGetRequest
+  void identifyUser(String userId) {
+    // TODO: implement identifyUser
   }
 }
 

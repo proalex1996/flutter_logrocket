@@ -29,7 +29,11 @@ class _MyAppState extends State<MyApp> {
   Future<void> initPlatformState() async {
     try {
       _flutterLogrocketPlugin.initLogrocket(appId: "gpghi6/tik_project");
-      _flutterLogrocketPlugin.identifyUser(userId: "a2312dsfddds34234");
+      _flutterLogrocketPlugin.identifyUser(
+        userId: "jiiigidsssshi2232",
+        email: "guest1@gmail.com",
+        name: "User1",
+      );
     } on PlatformException {
       log("cannot init app");
     }

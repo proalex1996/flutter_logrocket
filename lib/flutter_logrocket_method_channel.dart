@@ -16,8 +16,15 @@ class MethodChannelFlutterLogrocket extends FlutterLogrocketPlatform {
   }
 
   @override
-  void identifyUser(String userId) {
-    methodChannel.invokeMethod<String>(
-        'identifyUser', <String, dynamic>{"userId": userId});
+  void identifyUser(
+    String userId,
+    String? name,
+    String? email,
+  ) {
+    methodChannel.invokeMethod<String>('identifyUser', <String, dynamic>{
+      "userId": userId,
+      "name": name,
+      "email": email,
+    });
   }
 }

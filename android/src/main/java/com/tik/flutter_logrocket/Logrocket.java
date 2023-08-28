@@ -12,6 +12,7 @@ import androidx.core.content.ContextCompat;
 
 import com.logrocket.core.SDK;
 
+import java.lang.reflect.Modifier;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,15 +22,29 @@ public class Logrocket extends Application {
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
         Log.d(TAG, "Init Log Rocket with: " + appId);
-        boolean init = SDK.init(
-                this,
-                base,
-                options -> {
-                    options.setAppID(appId);
+        try{
+            boolean init = SDK.init(
+                    this,
+                    base,
+                    options -> {
+                        options.setAppID(appId);
+                        options.setTextSanitizer(SDK.SanitizerType.EXCLUDED);
+                        options.isJetpackComposeEnabled();
 
-                }
-        );
 
-        Log.d(TAG, "Init Log Rocket: " + init);
+                    }
+            );
+
+            SDK.tagPage("Apparel");
+
+            SDK.tagPage("Apparel/Sweaters");
+
+            SDK.tagPage("Apparel/Pants");
+
+            Log.d(TAG, "Init Log Rocket: " + init);
+        }catch (Exception e){
+            Log.d(TAG, "Init Log Rocket Error: " + e);
+        }
+
     }
 }

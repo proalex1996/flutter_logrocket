@@ -5,7 +5,11 @@ class FlutterLogrocket {
     FlutterLogrocketPlatform.instance.initLogrocket(appId);
   }
 
-  void identifyUser({required String userId}) async {
-    FlutterLogrocketPlatform.instance.identifyUser(userId);
+  void identifyUser({
+    required String userId,
+    String? name,
+    String? email,
+  }) async {
+    FlutterLogrocketPlatform.instance.identifyUser(userId, name, email);
   }
 }

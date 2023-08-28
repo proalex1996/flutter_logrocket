@@ -48,6 +48,8 @@ public class FlutterLogrocketPlugin extends Logrocket implements FlutterPlugin, 
     }else if(call.method.equals("identifyUser")){
       identifyUser = new IdentifyUser();
       identifyUser.userId = call.argument("userId");
+      identifyUser.name = call.argument("name");
+      identifyUser.email = call.argument("email");
       identifyUser.identifyUser();
     }  else {
       result.notImplemented();
